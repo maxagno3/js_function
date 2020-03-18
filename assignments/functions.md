@@ -6,6 +6,12 @@
 
 ```js
 // your code goes here
+function calculateDogAge(puppyAge, humanAge){
+  let dogAge = puppyAge * 7;
+  console.log(`Your doggie is ${dogAge} years old in dog years`);
+  let ageOfHuman = humanAge * 7;
+  console.log(ageOfHuman);
+}
 ```
 2. 🎖Write a function named calculateSupply that:
   * [ ] takes 2 arguments: age, amount per day.
@@ -15,6 +21,11 @@
 
 ```js
 // your code goes here
+const max_age = 100;
+function calculateSupply(age, amountPerDay){
+  let restOfLife = (max_age - age) * 365 * amountPerDay;
+  console.log(`"You wll need ${restOfLife} to last you until the ripe old age of ${max_age}"`)
+}
 ```
 3. 🎖Create a function called celsiusToFahrenheit:
   * [ ] Store a celsius temperature into a variable.
@@ -25,6 +36,14 @@
 
 ```js
 // your code goes here
+function celsiusToFahrenheit(celsius){
+  let fahTemperature = celsius * 1.8 + 32;
+  console.log(`${celsius}°C is ${fahTemperature}°F`);
+}
+function fahrenheitToCelsius(fahrenheit){
+  let celTemperature = (fahrenheit - 32) * 5/9;
+  console.log(`${fahrenheit}°F is ${celTemperature}°C`);
+}
 ```
 4. 🎖The function below returns true if the parameter age is greater than 18. Otherwise it asks for a confirmation and returns its result:
 
@@ -41,11 +60,17 @@ function checkAge(age) {
   4.1 🎖Convert the above function using ternary operator.
   ```js
   // your code goes here
+  function checkAge(age){
+    return (age > 18) ? true : confirm("Did parents allow you?");
+  }
   ```
 
   4.2 🎖Convert the above function using `||` operator.
   ```js
   // your code goes here
+  function checkAge(age){
+    return (age > 18) || confirm("Did parents allow you?");
+  }
   ```
 Will the function work differently if else is removed like below?
 
@@ -57,6 +82,7 @@ function checkAge(age) {
   // ...
   return confirm("Did parents allow you?");
 }
+//Yes it'd run.
 ```
 Is there any difference in the behavior of these two variants? If there is what is that?
 
@@ -69,32 +95,68 @@ Is there any difference in the behavior of these two variants? If there is what 
 ```js
 // Your code goes here
 
+let x = prompt('Enter number');
+let n = prompt('Enter second number');
+let pow = (x,n) => (n < 1) ? alert('Number must be greater than one') : x**n;
+
 // After writing code uncomment to check the answer.
-// pow(3, 2); // 9
-// pow(3, 3); // 27
-// pow(1, 100); // 1
-// pow(-31, 2); // "The number below 1 is not allowed"
+  // pow(3, 2); // 9
+  // pow(3, 3); // 27
+  // pow(1, 100); // 1
+  // pow(-31, 2); // "The number below 1 is not allowed"
+````
 
 6. 🎖Write a program that asks the user for a number n and gives them the possibility to choose between computing the sum and computing the product of 1,…,n. Return the result accordingly.
 
-```js
+````js
 // your code goes here
+let n = prompt('Enter Number');
+n = Number(n);
+let sumProduct = 0;
+let newSum = 1;
+for(let i = 0; i < n; i++) {
+  sumProduct = sumProduct + i;
+  console.log(sumProduct);
+}else{
+  for(let i=1; i<n; i++){
+    mewSum = newSum + i;
+    console.log(newSum);
+  }
+}
 ```
 6. 🎖Write a program that asks the user for a number n using prompt and prints the sum of the numbers 1 to n
 
 ```js
 // your code goes here
+let n = prompt('Enter Number');
+n = Number(n);
+let sumProduct = 0;
+for(let i = 0; i < n; i++) {
+  sumProduct = sumProduct + i;
+  console.log(sumProduct);
+}
 ```
 7. 🎖Modify the previous program such that only multiples of 5 or 7 are considered in the sum, e.g. n = 20 (5,7,10,14,15,20) 71
 
 ```js
 // your code goes here
+let n = prompt('Enter Number');
+n = Number(n);
+let sumProduct = 0;
+for(let i = 0; i < n; i++) {
+  if(n == 5 || 7){
+    sumProduct = n * i;
+    console.log(sumProduct);
+  }
+}
 ```
 
 8. 🎖Write a function `min` that takes two arguments and returns their minimum.
 
 ```js
 // Your code here.
+
+let min = (a,b) => ( a < b) ? a : b;
 
 console.log(min(0, 10));
 // → 0
